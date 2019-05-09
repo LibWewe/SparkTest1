@@ -29,6 +29,5 @@ object DSLWC {
         result.show()
         //释放资源
         sparkSession.stop()
-
     }
 }
