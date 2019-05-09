@@ -4,7 +4,12 @@ import org.apache.spark.rdd.RDD
 import org.apache.spark.sql.types._
 import org.apache.spark.sql.{DataFrame, Dataset, Row, SQLContext}
 import org.apache.spark.{SparkConf, SparkContext}
-
+/*
+ * @Author wewe 
+ * @ClassName SqlDemo3
+ * @Description //TODO spark sql v1.x版本的测试，使用DSL方式并使用Row的方式
+ * @Date 15:30 2019/5/9
+ **/
 object SqlDemo3 {
     def main(args: Array[String]): Unit = {
         //创建spark config
