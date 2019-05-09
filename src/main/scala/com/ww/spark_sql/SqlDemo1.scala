@@ -3,7 +3,12 @@ package com.ww.spark_sql
 import org.apache.spark.rdd.RDD
 import org.apache.spark.sql.{DataFrame, SQLContext}
 import org.apache.spark.{SparkConf, SparkContext}
-
+/*
+ * @Author wewe
+ * @ClassName SqlDemo1
+ * @Description //TODO spark sql v1.x版本的测试，使用sql方式并创建case class
+ * @Date 15:27 2019/5/9
+ **/
 object SqlDemo1 {
     def main(args: Array[String]): Unit = {
         //创建spark config
