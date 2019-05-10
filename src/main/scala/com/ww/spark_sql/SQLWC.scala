@@ -12,7 +12,7 @@ object SQLWC {
     def main(args: Array[String]): Unit = {
         val sparkSession = SparkSession.builder()
                 .appName("SQLWC")
-                .master("loacl[*]")
+                .master("local[*]")
                 .getOrCreate()
         //读数据，lazy,Dataset也是分布式数据集，但是更加智能，是对DataFrame的进一步封装
         val lines: Dataset[String] = sparkSession.read.textFile("hdfs://wewe:9000/spark/wc1")
@@ -23,7 +23,7 @@ object SQLWC {
         //创建虚拟视图
         words.createTempView("v_wc")
         //创建SQL语句
-        val result: DataFrame = sparkSession.sql("SELECT value,COUNT(*) FROM v_wc")
+        val result: DataFrame = sparkSession.sql("SELECT value,COUNT(*) counts FROM v_wc GROUP BY value ORDER BY counts DESC")
         //获取结果
         result.show()
         //释放资源
