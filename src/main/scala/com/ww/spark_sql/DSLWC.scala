@@ -13,7 +13,7 @@ object DSLWC {
     def main(args: Array[String]): Unit = {
         val sparkSession = SparkSession.builder()
                 .appName("DSLWC")
-                .master("loacl[*]")
+                .master("local[*]")
                 .getOrCreate()
         //读数据，lazy,Dataset也是分布式数据集，但是更加智能，是对DataFrame的进一步封装
         val lines: Dataset[String] = sparkSession.read.textFile("hdfs://wewe:9000/spark/wc1")
